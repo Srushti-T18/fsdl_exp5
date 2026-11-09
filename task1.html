@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h2>Sports Store Bill</h2>
+<p id="result"></p>
+
+<script>
+let prices = [1500, 2000, 1000, 500];
+
+let total = prices.reduce((sum, price) => sum + price, 0);
+
+let discount = 0;
+
+if (total > 4000) {
+    discount = total * 0.10;
+}
+
+let finalAmount = total - discount;
+
+document.getElementById("result").innerHTML =
+    "Total Bill: ₹" + total + "<br>" +
+    "Discount: ₹" + discount + "<br>" +
+    "Final Amount: ₹" + finalAmount;
+</script>
+</body>
+</html>
