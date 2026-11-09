@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Sports Movie Ticket Booking</h2>
+<p id="result"></p>
+
+<script>
+function selectMovie() {
+    return Promise.resolve("Movie Selected");
+}
+
+function checkSeats() {
+    return Promise.resolve("Seats Available");
+}
+
+function reserveSeat() {
+    return Promise.resolve("Seat Reserved");
+}
+
+function makePayment() {
+    return Promise.resolve("Payment Successful");
+}
+
+function generateTicket() {
+    return Promise.resolve("Ticket Generated Successfully");
+}
+
+async function bookTicket() {
+    try {
+        let a = await selectMovie();
+        document.getElementById("result").innerHTML += a + "<br>";
+
+        let b = await checkSeats();
+        document.getElementById("result").innerHTML += b + "<br>";
+
+        let c = await reserveSeat();
+        document.getElementById("result").innerHTML += c + "<br>";
+
+        let d = await makePayment();
+        document.getElementById("result").innerHTML += d + "<br>";
+
+        let e = await generateTicket();
+        document.getElementById("result").innerHTML += e;
+
+    } catch (error) {
+        document.getElementById("result").innerHTML =
+            "Error: " + error;
+    }
+}
+
+bookTicket();
+</script>
+
+</body>
+</html>
