@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Sports Store Food Ordering</h2>
+<p id="result"></p>
+
+<script>
+function selectFood(callback) {
+    document.getElementById("result").innerHTML += "Food Selected<br>";
+
+    callback();
+}
+
+function confirmOrder(callback) {
+    document.getElementById("result").innerHTML += "Order Confirmed<br>";
+
+    callback();
+}
+
+function prepareFood(callback) {
+    document.getElementById("result").innerHTML += "Food Prepared<br>";
+
+    callback();
+}
+
+function assignDelivery(callback) {
+    document.getElementById("result").innerHTML += "Delivery Partner Assigned<br>";
+
+    callback();
+}
+
+function deliverFood() {
+    document.getElementById("result").innerHTML += "Food Delivered Successfully!";
+}
+
+selectFood(function() {
+    confirmOrder(function() {
+        prepareFood(function() {
+            assignDelivery(function() {
+                deliverFood();
+            });
+        });
+    });
+});
+</script>
+
+</body>
+</html>
