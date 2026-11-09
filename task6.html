@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Sports Product Order</h2>
+<p id="result"></p>
+
+<script>
+function selectProduct() {
+    return new Promise((resolve) => {
+        resolve("Product Selected");
+    });
+}
+
+function checkAvailability() {
+    return new Promise((resolve) => {
+        resolve("Product Available");
+    });
+}
+
+function addToCart() {
+    return new Promise((resolve) => {
+        resolve("Product Added to Cart");
+    });
+}
+
+function makePayment() {
+    return new Promise((resolve) => {
+        resolve("Payment Successful");
+    });
+}
+
+function confirmOrder() {
+    return new Promise((resolve) => {
+        resolve("Order Confirmation Generated");
+    });
+}
+
+selectProduct()
+.then(msg => {
+    document.getElementById("result").innerHTML += msg + "<br>";
+    return checkAvailability();
+})
+.then(msg => {
+    document.getElementById("result").innerHTML += msg + "<br>";
+    return addToCart();
+})
+.then(msg => {
+    document.getElementById("result").innerHTML += msg + "<br>";
+    return makePayment();
+})
+.then(msg => {
+    document.getElementById("result").innerHTML += msg + "<br>";
+    return confirmOrder();
+})
+.then(msg => {
+    document.getElementById("result").innerHTML += msg;
+})
+.catch(error => {
+    document.getElementById("result").innerHTML += error;
+});
+</script>
+
+</body>
+</html>
